@@ -9,6 +9,7 @@
 using namespace std;
 using namespace Tins;
 
+
 //global vector for dns filtering
 const static std::vector<std::string> domains = {"shodan", "google"};
 
@@ -26,7 +27,6 @@ std::set<std::string> int_names()
 
     return interfaces;
 }
-
 
 bool callback(const PDU& pdu)
 {
