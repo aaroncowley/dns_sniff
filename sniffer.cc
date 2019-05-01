@@ -6,7 +6,8 @@
 using namespace std;
 using namespace Tins;
 
-std::vector<std::string> domains = {"shodan", "google"};
+// Add domains/words you want output for to domains vector
+std::vector<std::string> domains = {"google"};
 
 bool callback(const PDU& pdu)
 {
