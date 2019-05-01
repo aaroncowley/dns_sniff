@@ -4,4 +4,4 @@ A simple dns sniffer that can print out dns queries for listed sites using std::
 ## Usage
 run make in the cloned directory
 
-## Future improvements incoming soon
+## Future improvements coming soon
