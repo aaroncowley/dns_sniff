@@ -6,12 +6,11 @@
 #include <sys/types.h>
 #include <ifaddrs.h>
 
-using namespace std;
 using namespace Tins;
 
 
 //global vector for dns filtering
-const static std::vector<std::string> domains = {"shodan", "google"};
+const static std::vector<std::string> domains = {"youtube", "shodan", "google"};
 
 std::set<std::string> int_names()
 {
@@ -47,16 +46,9 @@ bool callback(const PDU& pdu)
 
 
 int main(int argc, char* argv[])
-{
-
-    /*
-    if(argc != 2) {
-        std::cout << "Usage: " <<* argv << " <interface>" << std::endl;
-        return 1; 
-    }
-    */
-    std::set<string> interfaces = int_names();
-    std::vector<string> int_vector;
+{ 
+    std::set<std::string> interfaces = int_names();
+    std::vector<std::string> int_vector;
 
     std::cout << "known network interfaces:" << std::endl;
     int i = 0;
@@ -71,7 +63,7 @@ int main(int argc, char* argv[])
         std::string input = "";
 
         std::cout << "pick an interface: ";
-        std::getline(cin, input);
+        std::getline(std::cin, input);
         std::cout << std::endl;
 
         int char_val = input[0] - '0';
@@ -80,7 +72,7 @@ int main(int argc, char* argv[])
             sel = input[0];
             break;
         }
-        cout << "invalid input detected, please try again" << endl;
+        std::cout << "invalid input detected, please try again" << std::endl;
     }
 
     int sel_to_int = sel - '0'; 
